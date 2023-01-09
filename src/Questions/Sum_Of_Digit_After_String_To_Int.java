@@ -22,4 +22,24 @@ public class Sum_Of_Digit_After_String_To_Int {
         }
         return num;
     }
+
+    public int getsLucky(String s, int k) {
+        int result = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int t = (int) s.charAt(i) - 96;
+            result += t < 10 ? t : t / 10 + t % 10;
+        }
+        //System.out.println(result);
+        k--;
+        while (k > 0 && result >= 10) {
+            int tmp = 0;
+            while (result > 0) {
+                tmp += result % 10;
+                result /= 10;
+            }
+            result = tmp;
+            k--;
+        }
+        return result;
+    }
 }
