@@ -6,6 +6,7 @@ public class Palindrome {
         String str = "abbaa";
         System.out.println(isPalindrome(str));
     }
+
     static boolean isPalindrome(String str) {
         if (str == null || str.length() == 0)
             return true;
@@ -17,6 +18,22 @@ public class Palindrome {
 
             if (start != end) {
                 return false;
+            }
+        }
+
+        return true;
+    }
+
+    static boolean checkPalindrome(String S) {
+        int start = 0;
+        int end = S.length() - 1;
+
+        while (start < end) {
+            if (S.charAt(start) != S.charAt(end)) {
+                return false;
+            } else {
+                start++;
+                end--;
             }
         }
 
